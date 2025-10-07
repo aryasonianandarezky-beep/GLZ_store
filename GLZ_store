@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>profil<title>
-<link rel="stylesheet" href="style.css">
+    <title>Profil Saya - Wahyudi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="kartu-profi"l>
-<img src="foto-profil.jpg> alt="Foto profil saya">
-<hl>arya soni ananda rezky</hl>
-<p> selamat datang</p>
-<a href="https://www.instagram.com/dhrmmaa_">kunjungi intagram saya </a>
-<button> id="sapaButton">sapa saya!</button>
-</div>
-<scrpt> src="script.js"></script>
+    <div class="kartu-profil">
+        <img src="foto-profil.jpg" alt="Foto profil saya">
+        <h1>Nama Lengkap Anda</h1>
+        <p>Siswa SMA yang tertarik dengan teknologi dan desain. Selamat datang di website pertama saya!</p>
+        <a href="https://www.instagram.com/username">Kunjungi Instagram Saya</a>
+        <button id="sapaButton">Sapa Saya!</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
