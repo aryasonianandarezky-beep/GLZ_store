@@ -3,7 +3,10 @@ body {
   font-family: Arial, sans-serif; /* Jenis huruf yang bersih dan mudah dibaca */
   color: #191970; /* Warna teks utama (Biru gelap) */
 }
-
+.kartu-profil img {
+  width: 100%; /* Membuat lebar gambar 100% dari lebar wadahnya */
+  height: auto; /* Mengatur tinggi secara otomatis agar gambar tidak gepeng (proporsional) */
+}
 .kartu-profil {
   width: 300px;
   margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
