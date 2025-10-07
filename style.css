@@ -1,28 +1,110 @@
-/* Menata Menu Navigasi */
-nav.menu {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-}
-
-nav.menu ul {
-    list-style-type: none;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-nav.menu ul li {
-    display: inline-block;
-    margin-right: 20px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
 }
 
-nav.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+/* Container */
+.menu-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-nav.menu ul li a:hover {
-    color: #f1f1f1;
-    border-bottom: 2px solid #f1f1f1;
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Menu Categories */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Menu List */
+.menu-category ul {
+    list-style-type: none;
+}
+
+.menu-category li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu-category li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-category li h3 {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.menu-category li .price {
+    font-size: 1.2em;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.menu-category li p {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .menu-category h2 {
+        font-size: 1.5em;
+    }
+
+    .menu-category li h3 {
+        font-size: 1.4em;
+    }
+
+    .menu-category li .price {
+        font-size: 1.1em;
+    }
 }
