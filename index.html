@@ -2,230 +2,192 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Daftar Menu - Warung Rasa Nusantara</title>
+  <title>Menu Restoran - Warung Rasa Nusantara</title>
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      overflow: hidden;
     }
 
     .page {
+      display: none;
       width: 100%;
       height: 100vh;
       padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      color: #fff;
-      page-break-after: always;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .page.active {
+      display: block;
+      z-index: 1;
     }
 
     h1 {
       margin-top: 0;
       text-align: center;
       font-size: 36px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-    }
-
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-    }
-
-    th {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Backgrounds for each section */
-    .utama {
-      background: linear-gradient(135deg, #ff7e5f, #feb47b); /* orange-pink */
-    }
-
-    .tambahan {
-      background: linear-gradient(135deg, #43cea2, #185a9d); /* green-blue */
-    }
-
-    .minuman {
-      background: linear-gradient(135deg, #70e1f5, #ffd194); /* soft blue-yellow */
-    }
-
-    .camilan {
-      background: linear-gradient(135deg, #f7971e, #ffd200); /* yellow-orange */
+      text-shadow: 1px 1px 3px #000;
     }
 
     .header {
       text-align: center;
       font-size: 20px;
       margin-top: -10px;
+      margin-bottom: 30px;
+      color: #ffe;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Background Styles */
+    .utama {
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      background-size: cover;
+    }
+
+    .tambahan {
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+    }
+
+    .minuman {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    .camilan {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
     }
   </style>
 </head>
 <body>
 
   <!-- Menu Utama -->
-  <div class="page utama">
+  <div class="page utama active" id="utama">
     <h1>📋 Menu Utama</h1>
     <div class="header">Warung Rasa Nusantara</div>
     <table>
-      <tr>
-        <th>Menu</th>
-        <th>Keterangan</th>
-        <th>Harga</th>
-      </tr>
-      <tr>
-        <td>Nasi Ayam Geprek</td>
-        <td>Ayam goreng tepung + sambal</td>
-        <td>Rp18.000</td>
-      </tr>
-      <tr>
-        <td>Nasi Goreng Spesial</td>
-        <td>Telur, ayam, sosis, sayur</td>
-        <td>Rp20.000</td>
-      </tr>
-      <tr>
-        <td>Nasi Ayam Bakar Madu</td>
-        <td>Ayam bakar bumbu madu + lalapan</td>
-        <td>Rp22.000</td>
-      </tr>
-      <tr>
-        <td>Nasi Rendang</td>
-        <td>Daging rendang + sambal hijau</td>
-        <td>Rp25.000</td>
-      </tr>
-      <tr>
-        <td>Nasi Ikan Sambal Matah</td>
-        <td>Ikan goreng + sambal matah segar</td>
-        <td>Rp20.000</td>
-      </tr>
-      <tr>
-        <td>Nasi Telur Dadar</td>
-        <td>Telur dadar tebal + sambal</td>
-        <td>Rp12.000</td>
-      </tr>
+      <tr><th>Menu</th><th>Keterangan</th><th>Harga</th></tr>
+      <tr><td>Nasi Ayam Geprek</td><td>Ayam goreng tepung + sambal</td><td>Rp18.000</td></tr>
+      <tr><td>Nasi Goreng Spesial</td><td>Telur, ayam, sosis, sayur</td><td>Rp20.000</td></tr>
+      <tr><td>Nasi Ayam Bakar Madu</td><td>Ayam bakar bumbu madu + lalapan</td><td>Rp22.000</td></tr>
+      <tr><td>Nasi Rendang</td><td>Daging rendang + sambal hijau</td><td>Rp25.000</td></tr>
+      <tr><td>Nasi Ikan Sambal Matah</td><td>Ikan goreng + sambal matah segar</td><td>Rp20.000</td></tr>
+      <tr><td>Nasi Telur Dadar</td><td>Telur dadar tebal + sambal</td><td>Rp12.000</td></tr>
     </table>
   </div>
 
   <!-- Menu Tambahan -->
-  <div class="page tambahan">
+  <div class="page tambahan" id="tambahan">
     <h1>🍲 Menu Tambahan</h1>
     <div class="header">Warung Rasa Nusantara</div>
     <table>
-      <tr>
-        <th>Menu</th>
-        <th>Keterangan</th>
-        <th>Harga</th>
-      </tr>
-      <tr>
-        <td>Tahu Tempe Goreng</td>
-        <td>4 potong</td>
-        <td>Rp6.000</td>
-      </tr>
-      <tr>
-        <td>Sayur Asem</td>
-        <td>Segar dan asam menyegarkan</td>
-        <td>Rp8.000</td>
-      </tr>
-      <tr>
-        <td>Soto Ayam</td>
-        <td>Kuah bening, suwiran ayam</td>
-        <td>Rp15.000</td>
-      </tr>
-      <tr>
-        <td>Bakso Kuah</td>
-        <td>5 bakso + mie/kuah</td>
-        <td>Rp17.000</td>
-      </tr>
+      <tr><th>Menu</th><th>Keterangan</th><th>Harga</th></tr>
+      <tr><td>Tahu Tempe Goreng</td><td>4 potong</td><td>Rp6.000</td></tr>
+      <tr><td>Sayur Asem</td><td>Segar dan asam menyegarkan</td><td>Rp8.000</td></tr>
+      <tr><td>Soto Ayam</td><td>Kuah bening, suwiran ayam</td><td>Rp15.000</td></tr>
+      <tr><td>Bakso Kuah</td><td>5 bakso + mie/kuah</td><td>Rp17.000</td></tr>
     </table>
   </div>
 
   <!-- Minuman -->
-  <div class="page minuman">
+  <div class="page minuman" id="minuman">
     <h1>🥤 Minuman</h1>
     <div class="header">Warung Rasa Nusantara</div>
     <table>
-      <tr>
-        <th>Menu</th>
-        <th>Keterangan</th>
-        <th>Harga</th>
-      </tr>
-      <tr>
-        <td>Es Teh Manis</td>
-        <td></td>
-        <td>Rp5.000</td>
-      </tr>
-      <tr>
-        <td>Teh Tawar Hangat</td>
-        <td></td>
-        <td>Rp3.000</td>
-      </tr>
-      <tr>
-        <td>Es Jeruk</td>
-        <td>Jeruk segar peras</td>
-        <td>Rp7.000</td>
-      </tr>
-      <tr>
-        <td>Es Lemon Tea</td>
-        <td>Teh + perasan lemon segar</td>
-        <td>Rp8.000</td>
-      </tr>
-      <tr>
-        <td>Es Kopi Susu</td>
-        <td>Kopi hitam + susu kental</td>
-        <td>Rp10.000</td>
-      </tr>
-      <tr>
-        <td>Air Mineral Botol</td>
-        <td></td>
-        <td>Rp4.000</td>
-      </tr>
+      <tr><th>Menu</th><th>Keterangan</th><th>Harga</th></tr>
+      <tr><td>Es Teh Manis</td><td>-</td><td>Rp5.000</td></tr>
+      <tr><td>Teh Tawar Hangat</td><td>-</td><td>Rp3.000</td></tr>
+      <tr><td>Es Jeruk</td><td>Jeruk segar peras</td><td>Rp7.000</td></tr>
+      <tr><td>Es Lemon Tea</td><td>Teh + perasan lemon segar</td><td>Rp8.000</td></tr>
+      <tr><td>Es Kopi Susu</td><td>Kopi hitam + susu kental</td><td>Rp10.000</td></tr>
+      <tr><td>Air Mineral Botol</td><td>-</td><td>Rp4.000</td></tr>
     </table>
   </div>
 
   <!-- Camilan -->
-  <div class="page camilan">
+  <div class="page camilan" id="camilan">
     <h1>🍰 Camilan</h1>
     <div class="header">Warung Rasa Nusantara</div>
     <table>
-      <tr>
-        <th>Menu</th>
-        <th>Keterangan</th>
-        <th>Harga</th>
-      </tr>
-      <tr>
-        <td>Pisang Goreng (5 potong)</td>
-        <td>Dihidangkan hangat</td>
-        <td>Rp10.000</td>
-      </tr>
-      <tr>
-        <td>Cireng Isi</td>
-        <td>Cireng dengan isi ayam</td>
-        <td>Rp8.000</td>
-      </tr>
-      <tr>
-        <td>Roti Bakar Coklat Keju</td>
-        <td>Manis & gurih</td>
-        <td>Rp12.000</td>
-      </tr>
-      <tr>
-        <td>Kentang Goreng</td>
-        <td>Dengan saus</td>
-        <td>Rp9.000</td>
-      </tr>
+      <tr><th>Menu</th><th>Keterangan</th><th>Harga</th></tr>
+      <tr><td>Pisang Goreng (5 potong)</td><td>Dihidangkan hangat</td><td>Rp10.000</td></tr>
+      <tr><td>Cireng Isi</td><td>Cireng dengan isi ayam</td><td>Rp8.000</td></tr>
+      <tr><td>Roti Bakar Coklat Keju</td><td>Manis & gurih</td><td>Rp12.000</td></tr>
+      <tr><td>Kentang Goreng</td><td>Dengan saus</td><td>Rp9.000</td></tr>
     </table>
   </div>
+
+  <!-- Navigasi -->
+  <div class="buttons">
+    <button onclick="showPage('utama')">Menu Utama</button>
+    <button onclick="showPage('tambahan')">Tambahan</button>
+    <button onclick="showPage('minuman')">Minuman</button>
+    <button onclick="showPage('camilan')">Camilan</button>
+  </div>
+
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
